@@ -29,9 +29,7 @@ const (
 // KwokConfiguration provides configuration for the Kwok.
 type KwokConfiguration struct {
 	metav1.TypeMeta `json:",inline"`
-	// Standard list metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-	metav1.ObjectMeta `json:"metadata,omitempty"`
+
 	// Options holds information about the default value.
 	Options KwokConfigurationOptions `json:"options,omitempty"`
 }

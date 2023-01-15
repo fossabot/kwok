@@ -25,9 +25,7 @@ import (
 // KwokctlConfiguration provides configuration for the Kwokctl.
 type KwokctlConfiguration struct {
 	metav1.TypeMeta
-	// Standard list metadata.
-	// More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata
-	metav1.ObjectMeta
+
 	// Options holds information about the default value.
 	Options KwokctlConfigurationOptions
 	// Components holds information about the components.

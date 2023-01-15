@@ -353,7 +353,6 @@ func Convert_v1alpha1_FinalizerItem_To_internalversion_FinalizerItem(in *v1alpha
 }
 
 func autoConvert_internalversion_KwokConfiguration_To_v1alpha1_KwokConfiguration(in *KwokConfiguration, out *v1alpha1.KwokConfiguration, s conversion.Scope) error {
-	out.ObjectMeta = in.ObjectMeta
 	if err := Convert_internalversion_KwokConfigurationOptions_To_v1alpha1_KwokConfigurationOptions(&in.Options, &out.Options, s); err != nil {
 		return err
 	}
@@ -366,7 +365,6 @@ func Convert_internalversion_KwokConfiguration_To_v1alpha1_KwokConfiguration(in 
 }
 
 func autoConvert_v1alpha1_KwokConfiguration_To_internalversion_KwokConfiguration(in *v1alpha1.KwokConfiguration, out *KwokConfiguration, s conversion.Scope) error {
-	out.ObjectMeta = in.ObjectMeta
 	if err := Convert_v1alpha1_KwokConfigurationOptions_To_internalversion_KwokConfigurationOptions(&in.Options, &out.Options, s); err != nil {
 		return err
 	}
@@ -449,7 +447,6 @@ func Convert_v1alpha1_KwokConfigurationOptions_To_internalversion_KwokConfigurat
 }
 
 func autoConvert_internalversion_KwokctlConfiguration_To_v1alpha1_KwokctlConfiguration(in *KwokctlConfiguration, out *v1alpha1.KwokctlConfiguration, s conversion.Scope) error {
-	out.ObjectMeta = in.ObjectMeta
 	if err := Convert_internalversion_KwokctlConfigurationOptions_To_v1alpha1_KwokctlConfigurationOptions(&in.Options, &out.Options, s); err != nil {
 		return err
 	}
@@ -473,7 +470,6 @@ func Convert_internalversion_KwokctlConfiguration_To_v1alpha1_KwokctlConfigurati
 }
 
 func autoConvert_v1alpha1_KwokctlConfiguration_To_internalversion_KwokctlConfiguration(in *v1alpha1.KwokctlConfiguration, out *KwokctlConfiguration, s conversion.Scope) error {
-	out.ObjectMeta = in.ObjectMeta
 	if err := Convert_v1alpha1_KwokctlConfigurationOptions_To_internalversion_KwokctlConfigurationOptions(&in.Options, &out.Options, s); err != nil {
 		return err
 	}

@@ -123,7 +123,6 @@ func (in *FinalizerItem) DeepCopy() *FinalizerItem {
 func (in *KwokConfiguration) DeepCopyInto(out *KwokConfiguration) {
 	*out = *in
 	out.TypeMeta = in.TypeMeta
-	in.ObjectMeta.DeepCopyInto(&out.ObjectMeta)
 	out.Options = in.Options
 	return
 }
@@ -166,7 +165,6 @@ func (in *KwokConfigurationOptions) DeepCopy() *KwokConfigurationOptions {
 func (in *KwokctlConfiguration) DeepCopyInto(out *KwokctlConfiguration) {
 	*out = *in
 	out.TypeMeta = in.TypeMeta
-	in.ObjectMeta.DeepCopyInto(&out.ObjectMeta)
 	out.Options = in.Options
 	if in.Components != nil {
 		in, out := &in.Components, &out.Components

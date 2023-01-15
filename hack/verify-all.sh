@@ -46,6 +46,11 @@ if [[ "${VERIFY_GENERATE:-true}" == "true" ]]; then
   "${ROOT_DIR}"/hack/verify-generate.sh || failed+=(go-generate)
 fi
 
+if [[ "${VERIFY_CODEGEN:-true}" == "true" ]]; then
+  echo "[*] Verifying codegen..."
+  "${ROOT_DIR}"/hack/verify-codegen.sh || failed+=(go-codegen)
+fi
+
 # exit based on verify scripts
 if [[ "${#failed[@]}" != 0 ]]; then
   echo "Verify failed for: ${failed[*]}"
