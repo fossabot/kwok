@@ -192,7 +192,7 @@ func (c *PodController) DeletePod(ctx context.Context, pod *corev1.Pod) error {
 	err := c.clientSet.CoreV1().Pods(pod.Namespace).Delete(ctx, pod.Name, deleteOpt)
 	if err != nil {
 		if apierrors.IsNotFound(err) {
-			logger.Warn("Delete pod", err)
+			logger.Error("Delete pod", err)
 			return nil
 		}
 		return err
@@ -311,7 +311,7 @@ func (c *PodController) lockPod(ctx context.Context, pod *corev1.Pod, patch []by
 	_, err := c.clientSet.CoreV1().Pods(pod.Namespace).Patch(ctx, pod.Name, types.StrategicMergePatchType, patch, metav1.PatchOptions{}, "status")
 	if err != nil {
 		if apierrors.IsNotFound(err) {
-			logger.Warn("Patch pod", err)
+			logger.Error("Patch pod", err)
 			return nil
 		}
 		return err
