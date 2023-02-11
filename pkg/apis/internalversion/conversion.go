@@ -94,3 +94,47 @@ func ConvertToInternalVersionStage(in *v1alpha1.Stage) (*Stage, error) {
 	}
 	return &out, nil
 }
+
+// ConvertToV1Alpha1ClusterPortForward converts an internal version ConvertToV1Alpha1ClusterPortForward to a v1alpha1.ConvertToV1Alpha1ClusterPortForward.
+func ConvertToV1Alpha1ClusterPortForward(in *ClusterPortForward) (*v1alpha1.ClusterPortForward, error) {
+	var out v1alpha1.ClusterPortForward
+	out.APIVersion = v1alpha1.GroupVersion.String()
+	out.Kind = v1alpha1.ClusterPortForwardKind
+	err := Convert_internalversion_ClusterPortForward_To_v1alpha1_ClusterPortForward(in, &out, nil)
+	if err != nil {
+		return nil, err
+	}
+	return &out, nil
+}
+
+// ConvertToInternalClusterPortForward converts a v1alpha1.ConvertToInternalClusterPortForward to an internal version.
+func ConvertToInternalClusterPortForward(in *v1alpha1.ClusterPortForward) (*ClusterPortForward, error) {
+	var out ClusterPortForward
+	err := Convert_v1alpha1_ClusterPortForward_To_internalversion_ClusterPortForward(in, &out, nil)
+	if err != nil {
+		return nil, err
+	}
+	return &out, nil
+}
+
+// ConvertToV1Alpha1PortForward converts an internal version ConvertToV1Alpha1PortForward to a v1alpha1.ConvertToV1Alpha1PortForward.
+func ConvertToV1Alpha1PortForward(in *PortForward) (*v1alpha1.PortForward, error) {
+	var out v1alpha1.PortForward
+	out.APIVersion = v1alpha1.GroupVersion.String()
+	out.Kind = v1alpha1.PortForwardKind
+	err := Convert_internalversion_PortForward_To_v1alpha1_PortForward(in, &out, nil)
+	if err != nil {
+		return nil, err
+	}
+	return &out, nil
+}
+
+// ConvertToInternalPortForward converts a v1alpha1.ConvertToInternalVersionKwokctlConfiguration to an internal version.
+func ConvertToInternalPortForward(in *v1alpha1.PortForward) (*PortForward, error) {
+	var out PortForward
+	err := Convert_v1alpha1_PortForward_To_internalversion_PortForward(in, &out, nil)
+	if err != nil {
+		return nil, err
+	}
+	return &out, nil
+}
