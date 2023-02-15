@@ -238,6 +238,11 @@ func Save(ctx context.Context, path string, objs []metav1.Object) error {
 		if err != nil {
 			return err
 		}
+
+		err = file.Sync()
+		if err != nil {
+			return err
+		}
 	}
 	return nil
 }
