@@ -11,7 +11,7 @@ spec:
       targetPort: 10247
       targetAddress: localhost
 
-    # # match the port 8002 forwards with the stdin/stdout of nc
+    # match the port 8002 forwards with the stdin/stdout of nc
     - ports:
       - 8002
       command:
