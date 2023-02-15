@@ -178,6 +178,16 @@ jobs:
           ./hack/requirements.sh kubectl
           kubectl version || :
 
+      - name: Test Cluster Port Forward
+        shell: bash
+        run: |
+          ./hack/e2e-test.sh kwokctl/kwokctl_${{ matrix.kwokctl-runtime }}_cluster_port_forward
+
+      - name: Test Port Forward
+        shell: bash
+        run: |
+          ./hack/e2e-test.sh kwokctl/kwokctl_${{ matrix.kwokctl-runtime }}_port_forward
+
       - name: Test Workable
         shell: bash
         run: |
@@ -216,16 +226,6 @@ jobs:
         shell: bash
         run: |
           ./hack/e2e-test.sh kwokctl/kwokctl_${{ matrix.kwokctl-runtime }}_restart
-
-      - name: Test Cluster Port Forward
-        shell: bash
-        run: |
-          ./hack/e2e-test.sh kwokctl/kwokctl_${{ matrix.kwokctl-runtime }}_cluster_port_forward
-
-      - name: Test Port Forward
-        shell: bash
-        run: |
-          ./hack/e2e-test.sh kwokctl/kwokctl_${{ matrix.kwokctl-runtime }}_port_forward
 
       - name: Test Benchmark
         if: ${{ matrix.os == 'ubuntu-latest' && matrix.kwokctl-runtime != 'kind' }}
